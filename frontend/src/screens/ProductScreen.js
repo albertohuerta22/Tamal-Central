@@ -13,7 +13,11 @@ import {
 } from 'react-bootstrap';
 
 const ProductScreen = () => {
-  return <div>ProductScreen</div>;
+  return (
+    <Row>
+      <Col md={6}>{/* <Image src={product.image} /> */}</Col>
+    </Row>
+  );
 };
 
 export default ProductScreen;
