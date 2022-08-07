@@ -1,0 +1,21 @@
+{
+  "name": "tamalcentral",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertohuerta22/Tamal-Central.git"
+  },
+  "author": "Alberto H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albertohuerta22/Tamal-Central/issues"
+  },
+  "homepage": "https://github.com/albertohuerta22/Tamal-Central#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.5.1"
+  }
+}
