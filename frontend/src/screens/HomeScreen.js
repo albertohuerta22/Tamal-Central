@@ -18,7 +18,6 @@ const HomeScreen = () => {
     dispatch(listProducts()); // this is what gets the ball rolling
   }, [dispatch]);
 
-  console.log(productList);
   return (
     <>
       <h1>Latest Dishes</h1>
@@ -29,7 +28,14 @@ const HomeScreen = () => {
       ) : (
         <Row>
           {products.map((product) => (
-            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+            <Col
+              key={product._id}
+              sm={12}
+              md={6}
+              lg={4}
+              xl={3}
+              // className="align-items-stretch d-flex"
+            >
               <Product product={product} />
             </Col>
           ))}
