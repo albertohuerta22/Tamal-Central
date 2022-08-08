@@ -1,13 +1,13 @@
 import express from 'express';
 
-import { getProudcts } from '../controllers/productControllers.js';
+import { getProducts } from '../controllers/productController.js';
 
-const router = express.router();
+const router = express.Router();
 
 //@description GET all products
 //@route GET /api/products
 //@access PUBLIC
 
-router.route('/').get(getProudcts);
+router.route('/').get(getProducts);
 
 export default router;
