@@ -15,7 +15,9 @@ import {
 const ProductScreen = () => {
   return (
     <Row>
-      <Col md={6}>{/* <Image src={product.image} /> */}</Col>
+      <Col md={6}>
+        <Image src={product.image} />
+      </Col>
     </Row>
   );
 };
