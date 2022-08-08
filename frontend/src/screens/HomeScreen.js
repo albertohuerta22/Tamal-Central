@@ -1,7 +1,9 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
+import { listProducts } from '../action/productActions';
 
 const HomeScreen = () => {
-  return <div>This is the HomeScreen</div>;
+  return <Row></Row>;
 };
 
 export default HomeScreen;
