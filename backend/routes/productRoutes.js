@@ -3,6 +3,7 @@ import express from 'express';
 import {
   getProductById,
   getProducts,
+  deleteProduct,
 } from '../controllers/productController.js';
 
 const router = express.Router();
@@ -12,6 +13,6 @@ const router = express.Router();
 //@access PUBLIC
 
 router.route('/').get(getProducts);
-router.route('/:id').get(getProductById);
+router.route('/:id').get(getProductById).delete(deleteProduct);
 
 export default router;
