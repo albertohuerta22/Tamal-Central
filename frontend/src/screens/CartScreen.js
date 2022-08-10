@@ -37,6 +37,8 @@ const CartScreen = () => {
     console.log('remove item');
   };
 
+  const quantityValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   return (
     <Row>
       <Col md={8}>
@@ -68,7 +70,7 @@ const CartScreen = () => {
                         )
                       }
                     >
-                      {[...Array(item.countInStock).keys()].map((x) => (
+                      {quantityValues.map((x) => (
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>
@@ -77,6 +79,7 @@ const CartScreen = () => {
                   </Col>
                   <Col md={2} className="product-page-section">
                     <Button
+                      className="product-page-section"
                       type="button"
                       variant="light"
                       onClick={() => removeFromCartHandler(item.product)}
