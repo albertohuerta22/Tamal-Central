@@ -16,28 +16,37 @@ import {
 import Message from '../components/Message';
 
 //action imported to dispatch id
-import { addToCart } from '../action/cartActions';
+import { addToCart, removeFromCart } from '../action/cartActions';
 
 const CartScreen = () => {
+  const [qty, setQty] = useState(1);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
+  console.log(cartItems);
+
   // const cartItems = localStorage.getItem('cartItems')
   //   ? JSON.parse(localStorage.getItem('cartItems'))
   //   : [];
+
+  // useEffect(() => {
+  //   if (cartItems) {
+  //     setQuantity(cartItems);
+  //   }
+  // });
 
   const checkoutHandler = () => {
     console.log('checkout clicked');
   };
 
-  const removeFromCartHandler = () => {
-    console.log('remove item');
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
   };
 
-  const quantityValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const quantityValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
     <Row>
@@ -66,13 +75,14 @@ const CartScreen = () => {
                       value={item.qty}
                       onChange={(e) =>
                         dispatch(
-                          addToCart(item.product, Number(e.target.value))
+                          addToCart(item.product, Number(e.target.value)),
+                          setQty(e.target.value)
                         )
                       }
                     >
                       {quantityValues.map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
+                        <option key={x} value={x}>
+                          {x}
                         </option>
                       ))}
                     </Form.Control>
@@ -93,7 +103,7 @@ const CartScreen = () => {
           </ListGroup>
         )}
       </Col>
-      <Col md={4}>
+      <Col md={4} style={{ marginTop: '20px' }}>
         <Card>
           <ListGroup variant="flush">
             <ListGroup.Item>

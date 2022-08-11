@@ -5,6 +5,7 @@ const products = [
     description: 'Red Tamale, contains marinated Pork',
     price: 2.99,
     rating: 4.5,
+    qty: 10,
   },
   {
     name: 'Green Tamales',
@@ -13,6 +14,7 @@ const products = [
       'Green Tamale, contains marinated Chicken with green tomatillo sauce',
     price: 2.99,
     rating: 4.5,
+    qty: 10,
   },
   {
     name: 'Mole',
@@ -20,6 +22,7 @@ const products = [
     description: 'Mole, contains marinated Chicken in famous mole sauce.',
     price: 9.99,
     rating: 4.5,
+    qty: 10,
   },
   {
     name: 'Champurrado',
@@ -27,6 +30,7 @@ const products = [
     description: 'Delicious drink famous in Mexico',
     price: 4.99,
     rating: 5,
+    qty: 10,
   },
 ];
 
