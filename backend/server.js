@@ -6,6 +6,7 @@ import colors from 'colors';
 
 //routes
 import productRoutes from './routes/productRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 
 dotenv.config();
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 
 //mount our routes
 app.use('/api/products', productRoutes);
+app.use('/api/orders', orderRoutes);
 
 //error handling
 app.use(notFound); //something that doesnt exist
