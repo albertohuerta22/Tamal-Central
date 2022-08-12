@@ -26,8 +26,6 @@ const CartScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  console.log(cartItems);
-
   // const cartItems = localStorage.getItem('cartItems')
   //   ? JSON.parse(localStorage.getItem('cartItems'))
   //   : [];
@@ -39,7 +37,7 @@ const CartScreen = () => {
   // });
 
   const checkoutHandler = () => {
-    console.log('checkout clicked');
+    navigate(`/shipping`);
   };
 
   const removeFromCartHandler = (id) => {
