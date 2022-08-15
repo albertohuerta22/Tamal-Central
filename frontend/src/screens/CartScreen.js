@@ -19,7 +19,7 @@ import Message from '../components/Message';
 import { addToCart, removeFromCart } from '../action/cartActions';
 
 const CartScreen = () => {
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState(0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -70,11 +70,10 @@ const CartScreen = () => {
                   <Col className="product-page-section">
                     <Form.Control
                       as="select"
-                      value={item.qty}
+                      value={qty}
                       onChange={(e) =>
                         dispatch(
-                          addToCart(item.product, Number(e.target.value)),
-                          setQty(e.target.value)
+                          addToCart(item.product, Number(e.target.value))
                         )
                       }
                     >
